@@ -6,6 +6,10 @@
     --bg-color: #FFFFFF;
     --light-gray-bg: #f8f9fa;
   }
+  html {
+    scroll-behavior: smooth;
+  }
+  
   body {
     font-family: 'Noto Sans JP', sans-serif; margin: 0; color: var(--text-color);
     background-color: var(--bg-color); line-height: 1.7;
