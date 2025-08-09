@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JOBFAIR - 外国人留学生向け採用イベント</title>
+  <meta name="description" content="優秀な外国人留学生と繋がる国内最大級の採用イベント「JOBFAIR」の出展企業を募集中です。">
+  
+  <!-- CSS files -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- JavaScript libraries (defer attribute prevents render-blocking) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container" data-aos="fade-in">
+      <img src="banner.jpg" alt="JOBFAIR Banner" class="hero-banner" />
+      <h1 class="headline">外国人留学生向け採用イベント「JOBFAIR」</h1>
+      <p class="subheadline">＼優秀な外国人留学生とつながる！／<br>『JOBFAIR』出展企業募集中</p>
+      <a href="#contact" class="cta-button">出展資料ダウンロード・ご相談はこちら</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Introduction Section -->
+    <section class="intro-section">
+        <div class="container" data-aos="fade-up">
+            <h2 class="intro-heading">27ヵ国の留学生が参加／バイリンガル・トリリンガル多数｜<br>上智大学共催＋全国350大学 × SNS拡散 ＝ 高語学力人材が採用可能！</h2>
+            <hr class="intro-divider">
+            <p class="intro-text-sub">国内最大級｜全国から日本で就職したいと意欲溢れる「外国人留学生」が参加する大学連携就職イベント「JOBFAIR」 by 学生専門求人サービス「Rooky(ルーキー)」</p>
+        </div>
+    </section>
+  
+    <!-- 3 Reasons Section -->
+    <section class="reasons">
+      <div class="container">
+        <h2 data-aos="fade-up">選ばれる3つの理由</h2>
+        <div class="reason-grid">
+          <div class="reason-card" data-aos="fade-right">
+            <h3>1. 圧倒的な言語力</h3>
+            <ul>
+              <li>参加者の約90％がN1/N2取得済み</li>
+              <li>英語・母語含むトリリンガルも参加多数</li>
+            </ul>
+          </div>
+          <div class="reason-card" data-aos="fade-left">
+            <h3>2. 広報力と集客力</h3>
+            <ul>
+              <li>全国350大学のキャリアセンターに告知</li>
+              <li>SNS（Instagram／TikTok）合計1.7万人にリーチ</li>
+            </ul>
+          </div>
+          <div class="reason-card" data-aos="fade-right">
+            <h3>3. イベント後の接点構築</h3>
+            <ul>
+              <li>申込があった学生へのアプローチが可能</li>
+              <li>動画配信による広報と選考導線設計が可能</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Business Overview Section -->
+    <section class="overview-section">
+        <div class="container" data-aos="fade-up">
+            <h2 class="section-title-small">事業概要（概要紹介）</h2>
+            <p class="overview-text">JOBFAIRは、外国人留学生に特化した就職イベントとして、年に複数回開催し、全国の外国人留学生が参加する国内最大級のマッチングイベントです。オンラインで全国どこからでも参加可能。企業の外国人採用を、戦略的に支援します。</p>
+        </div>
+    </section>
+
+    <!-- Strengths Section -->
+    <section class="strengths-section">
+        <div class="container" data-aos="fade-up">
+            <h2 class="section-title-small">JOBFAIRの強みとは？</h2>
+            <table class="strengths-table">
+                <tbody>
+                    <tr><th>✅ 年複数回開催</th><td>採用タイミングに合わせて柔軟に参加可能</td></tr>
+                    <tr><th>✅ 学生専門求人サイトNo.1と連携</th><td>イベント外でも応募獲得・継続的な接点を創出</td></tr>
+                    <tr><th>✅ 全国350大学が協力</th><td>キャリアセンター告知で高精度な集客力</td></tr>
+                    <tr><th>✅ 参加学生の言語スキルが高い</th><td>日本語N1/N2：約90％以上／日常会話以上の英語力：約90％以上</td></tr>
+                    <tr><th>✅ 母集団形成が可能</th><td>学生情報の提供 → 面接誘導・内定獲得へ</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Infographics Section -->
+    <section class="infographics">
+      <div class="container">
+        <h2 data-aos="fade-up">参加学生の特長（実績データ）</h2>
+        <div class="charts-container" data-aos="fade-up">
+          <div class="chart-wrapper">
+            <h3>日本語能力</h3>
+            <canvas id="japaneseLevelChart" role="img" aria-label="日本語能力の円グラフ"></canvas>
+          </div>
+          <div class="chart-wrapper">
+            <h3>英語レベル</h3>
+            <canvas id="englishLevelChart" role="img" aria-label="英語レベルの棒グラフ"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Participating Companies Section -->
+    <section class="companies-section">
+      <div class="container" data-aos="zoom-in">
+        <h2 class="section-title-small">実績企業（一部抜粋）</h2>
+        <div class="company-examples">
+            <p class="company-list">💼 参加企業例（実績）</p>
+            <p class="company-names">楽天、アットホーム、ジンズ</p>
+            <p class="company-note">🟢 業界問わず、多くの企業様にご活用いただいています。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- マーケティング画像セクション -->
+    <section class="marketing-section">
+        <div class="container" data-aos="fade-up">
+          <img src="marketing.jpg" alt="マーケティングイメージ" class="marketing-image">
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container" data-aos="fade-up">
+            <h2 class="section-title-small">ご利用企業様の声</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">💬「全国の大学への告知や周知ができ、よいPRができ、効率よく採用できた」</div>
+                <div class="testimonial-card">💬「早期に活動する語学が堪能な優秀な留学生が採用できた」</div>
+                <div class="testimonial-card">💬「参加者・イベント後の自社説明会へ誘導にて応募で採用に繋がった」</div>
+                <div class="testimonial-card">💬「語学力だけでなく、主体性ある学生と出会えた」</div>
+                <div class="testimonial-card">💬「グローバル配属前提の職種に適した人材と出会えた」</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Details Section -->
+    <section class="event-details-section">
+        <div class="container" data-aos="fade-up">
+            <h2 class="section-title-small">開催イベント概要</h2>
+            <div class="event-grid">
+                <div class="event-card">
+                    <h3>📌JOBFAIR（全2部制）</h3>
+                    <p><strong>第1回：</strong>2026年2月12日（木）</p>
+                    <p><strong>第2回：</strong>2026年3月10日（火）</p>
+                    <ul>
+                        <li><strong>第1部｜</strong>3分間企業スピーチ：全体へ短時間で印象的なPR</li>
+                        <li><strong>第2部｜</strong>30分×4セッションの説明会：学生が企業ルームへ選択参加（Zoom）</li>
+                    </ul>
+                    <p><strong>📆 年間複数回（春・夏・秋・冬開催）</strong></p>
+                    <p><strong>👥 対象：</strong>2026～2027年卒業予定の外国人留学生</p>
+                    <p><strong>🖥 開催形式：</strong>オンライン（Zoom）</p>
+                </div>
+                <div class="event-card">
+                    <h3>📌併催イベント：業界研究セミナー</h3>
+                    <p><strong>期間：</strong>2025年10月〜2026年1月</p>
+                    <p><strong>対象：</strong>全国の外国人留学生（1〜3年生）</p>
+                    <p><strong>内容：</strong>業界紹介・企業説明・座談会（計50分）</p>
+                    <p class="event-recommendation">→ インターンや長期的採用広報の入り口としておすすめ！</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steps Section -->
+    <section class="steps-section">
+        <div class="container" data-aos="fade-up">
+            <h2 class="section-title-small">出展ステップ</h2>
+            <ol class="steps-list">
+                <li>【資料請求】お気軽にお問い合わせください</li>
+                <li>【ご案内】ご訪問、オンラインでもお打ち合わせ可能です</li>
+                <li>【お申込み、ご契約】</li>
+                <li>【PR素材ご提出（企業情報・動画）】</li>
+                <li>【イベント実施（オンライン）】</li>
+                <li>【選考フォロー】</li>
+            </ol>
+            <div class="steps-note">
+                <p><strong>ここが安心！</strong></p>
+                <ul>
+                    <li>オンラインツール（ZOOM）に慣れていなくても、事前リハーサル実施でしっかりとフォローいたします。</li>
+                    <li>イベント後にはアンケートの共有等でしっかりと振り返りを実施。自社の採用プレゼンのブラッシュアップに役立ちます。</li>
+                    <li>イベント後の選考で何かお困りごとがございましたらご相談可能です。</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+  </main>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="container">
+      <h2 class="section-title-small" style="color: white;">お問合せ・資料請求</h2>
+      <a href="#contact" class="cta-button">今すぐ資料を受け取る／相談する</a>
+      <div class="footer-details">
+          <p class="footer-company">ルーキーワークス株式会社｜JOBFAIR事務局宛</p>
+          <p>〒101-0065 東京都千代田区西神田2-1-2 西神田センタービル5F</p>
+          <p>
+            <a href="mailto:support@rookyworks.jp" class="footer-link">support@rookyworks.jp</a> | 
+            <a href="https://rookyworks.jp/" target="_blank" rel="noopener noreferrer" class="footer-link">https://rookyworks.jp/</a>
+          </p>
+          <p class="footer-copyright">&copy; 2025 JOBFAIR by Rooky</p>
+          <p>
+            © Copyright (c) 2015 Michał Sajnóg
+            Released under the <a href="https://github.com/michalsnik/aos?tab=MIT-1-ov-file#readme" target="_blank">MIT License</a>.
+          </p>
+          <p>
+            © Copyright (c) 2014-2024 Chart.js Contributors
+            Released under the <a href="https://github.com/chartjs/Chart.js/blob/master/LICENSE" target="_blank">MIT License</a>.
+          </p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Include Custom JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
