@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ | JOBFAIR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styleinq.css">
+</head>
+<body class="bg-blue-50 min-h-screen flex flex-col items-center py-4 px-2">
+
+    <!-- Custom Alert Box -->
+    <div id="customAlert" class="hidden custom-alert">
+        <p id="customAlertMessage" class="text-xl font-semibold text-gray-800"></p>
+        <button id="customAlertClose" class="custom-alert-button">OK</button>
+    </div>
+    <div id="customAlertOverlay" class="hidden custom-alert-overlay"></div>
+
+    <header class="w-full max-w-5xl mx-auto px-2 mb-4 flex items-center justify-center">
+        <img src="https://i.postimg.cc/fTXzp2TX/rookylogo.png" alt="Rooky Logo" class="h-14 w-auto object-contain">
+    </header>
+
+    <div class="w-full max-w-4xl mx-auto px-4">
+        
+        <section class="w-full bg-white shadow-lg rounded-lg p-6 md:p-8 mb-6 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">外国人留学生向け採用イベント「JOBFAIR」</h1>
+            <h2 class="text-xl md:text-2xl font-semibold text-blue-800 mb-6">出展にご興味をお持ちの企業様へ</h2>
+            <div class="text-left text-base md:text-lg text-gray-700 space-y-4 max-w-3xl mx-auto">
+                <p>国内最大級の外国人留学生向け就職イベント「JOBFAIR」は、年間延べ1,000名以上が参加し、全国350大学・27ヵ国以上から優秀な人材が集まります。主催は学生専門求人サイトNo.1「Rooky」。オンライン開催で全国どこからでも参加可能。日本語N1/N2取得者90％超、英語ビジネスレベル以上53％と高い語学力を持つ学生と直接マッチングできます。年間複数回開催により採用タイミングに合わせた柔軟な参加が可能で、イベント後は学生データの提供や面接誘導などのフォローも実施。富士通、三井住友海上、PwC Japanなど多くの企業に活用されています。</p>
+                <p class="font-semibold text-center pt-4">以下ご入力後、担当者よりご連絡いたします。お気軽にお問い合わせください。</p>
+            </div>
+        </section>
+
+        <section class="w-full bg-white shadow-lg rounded-lg p-6 md:p-8 mb-6">
+            <h2 class="text-2xl md:text-3xl font-semibold text-blue-800 mb-6 text-center">お問い合わせフォーム</h2>
+            
+            <form id="inquiryForm" class="space-y-6 max-w-2xl mx-auto">
+                <div>
+                    <label for="inquiryType" class="block text-lg font-medium text-gray-700">お問い合わせ種別<span class="text-red-500">*</span></label>
+                    <select id="inquiryType" name="inquiryType" required class="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-lg py-3 px-3">
+                        <option value="">選択してください</option>
+                        <option value="資料請求">資料請求</option>
+                        <option value="サービスについて">サービスについて</option>
+                        <option value="その他">その他</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="fullName" class="block text-base font-medium text-gray-700">姓名<span class="text-red-500">*</span></label>
+                    <input type="text" name="fullName" id="fullName" required class="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-base py-3 px-3">
+                </div>
+                <div>
+                    <label for="furigana" class="block text-base font-medium text-gray-700">姓名(フリガナ)<span class="text-red-500">*</span></label>
+                    <input type="text" name="furigana" id="furigana" required class="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-base py-3 px-3">
+                </div>
+                <div>
+                    <label for="companyName" class="block text-base font-medium text-gray-700">会社名<span class="text-red-500">*</span></label>
+                    <input type="text" name="companyName" id="companyName" required class="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-base py-3 px-3">
+                </div>
+                <div>
+                    <label for="departmentName" class="block text-base font-medium text-gray-700">ご担当者の役職<span class="text-red-500">*</span></label>
+                    <input type="text" name="departmentName" id="departmentName" required class="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-base py-3 px-3">
+                </div>
+                <div>
+                    <label for="email" class="block text-base font-medium text-gray-700">Eメールアドレス<span class="text-red-500">*</span></label>
+                    <input type="email" name="email" id="email" required class="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-base py-3 px-3">
+                </div>
+                <div>
+                    <label for="phoneNumber" class="block text-base font-medium text-gray-700">携帯番号 (090-1234-5678)<span class="text-red-500">*</span></label>
+                    <input type="tel" name="phoneNumber" id="phoneNumber" required class="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-base py-3 px-3">
+                </div>
+                <div>
+                    <label for="message" class="block text-base font-medium text-gray-700">お問い合わせ詳細</label>
+                    <textarea name="message" id="message" rows="6" class="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-base py-3 px-3"></textarea>
+                </div>
+                <div class="flex items-center">
+                    <input type="checkbox" id="agreeCheckbox" name="agreeCheckbox" required class="h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                    <label for="agreeCheckbox" class="ml-3 block text-base text-gray-900">
+                        <a href="https://rookyworks.jp/privacy-policy/" target="_blank" class="text-blue-600 underline">プライバシーポリシー</a>に同意します <span class="text-red-500">*</span>
+                    </label>
+                </div>
+                
+                <button type="submit" id="submitForm" class="w-full max-w-xs mx-auto block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-5 rounded-md transition duration-300 ease-in-out shadow-md text-base">上記に同意して送信</button>
+            </form>
+        </section>
+    </div>
+    <script src="scriptinq.js"></script>
+</body>
+</html>
