@@ -90,23 +90,3 @@
     .charts-container { flex-direction: column; align-items: center; }
     .chart-wrapper { min-height: auto; }
   }
-  
-  .hero-banner {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 20px;
-  }
-
-  .marketing-section {
-    padding: 40px 0;
-    background-color: #f9f9f9;
-    text-align: center;
-  }
-  
-  .marketing-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }

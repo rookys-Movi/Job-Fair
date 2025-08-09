@@ -20,9 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
     overlay.addEventListener('click', hideAlert);
 
     form.addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent the default form submission
+        event.preventDefault();
 
-        // Simple validation check
         const requiredFields = form.querySelectorAll('[required]');
         let allFieldsFilled = true;
         requiredFields.forEach(field => {
@@ -36,21 +35,25 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // --- Placeholder for actual submission logic ---
-        // In a real application, you would call google.script.run here
-        // to send the form data to your Code.gs script.
-        // For now, we will just redirect to the thank you page.
-        
-        // Show a "submitting" message
         const submitButton = document.getElementById('submitForm');
         submitButton.disabled = true;
         submitButton.textContent = '送信中...';
 
-        // Get the base URL of the web app
-        google.script.run.withSuccessHandler(function(url) {
-            // Redirect to the thank you page using the correct URL structure
-            window.top.location.href = url + '?page=thankyou';
-        }).getWebAppUrl();
+        // This function will be called after the form data is processed on the server
+        function onFormSubmitSuccess(url) {
+             window.top.location.href = url + '?page=thankyou';
+        }
+
+        // Call the server-side function to process the form,
+        // and on success, call our local onFormSubmitSuccess function.
+        google.script.run
+            .withSuccessHandler(onFormSubmitSuccess)
+            .withFailureHandler(err => {
+                showAlert('送信に失敗しました。時間をおいて再度お試しください。');
+                console.error(err);
+                submitButton.disabled = false;
+                submitButton.textContent = '上記に同意して送信';
+            })
+            .processInquiryForm(this); // 'this' refers to the form element
     });
 });
-
