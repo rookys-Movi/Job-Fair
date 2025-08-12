@@ -38,22 +38,40 @@ document.addEventListener('DOMContentLoaded', function () {
         const submitButton = document.getElementById('submitForm');
         submitButton.disabled = true;
         submitButton.textContent = '送信中...';
+        
+        const formData = new FormData(form);
+        const dataObject = {};
+        formData.forEach((value, key) => { dataObject[key] = value; });
 
-        // This function will be called after the form data is processed on the server
-        function onFormSubmitSuccess(url) {
-             window.top.location.href = url + '?page=thankyou';
-        }
+        // Add the secret token for validation
+        dataObject.secret = '8qZ$p#vT2@nK*wG7hB5!sF8aU';
 
-        // Call the server-side function to process the form,
-        // and on success, call our local onFormSubmitSuccess function.
-        google.script.run
-            .withSuccessHandler(onFormSubmitSuccess)
-            .withFailureHandler(err => {
-                showAlert('送信に失敗しました。時間をおいて再度お試しください。');
-                console.error(err);
-                submitButton.disabled = false;
-                submitButton.textContent = '上記に同意して送信';
-            })
-            .processInquiryForm(this); // 'this' refers to the form element
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzWMskETGtSl35LFt3aIM5rzmQe3E4k79o3QAjFEOdB8ZLj_J5VSAunRhRB9qCMpZD6/exec";
+
+        fetch(SCRIPT_URL, {
+            method: 'POST',
+            // Use 'cors' mode and handle the actual response
+            mode: 'cors', 
+            headers: {
+                'Content-Type': 'text/plain;charset=utf-8', // Send as text/plain
+            },
+            body: JSON.stringify(dataObject),
+            redirect: 'follow'
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.result === 'success') {
+                // Redirect to the thank you page on success
+                window.top.location.href = 'thankyou_jobfair.html';
+            } else {
+                throw new Error(data.message || 'Unknown error');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            showAlert('送信に失敗しました。時間をおいて再度お試しください。');
+            submitButton.disabled = false;
+            submitButton.textContent = '上記に同意して送信';
+        });
     });
 });

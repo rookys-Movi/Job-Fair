@@ -36,6 +36,9 @@
             <h2 class="text-2xl md:text-3xl font-semibold text-blue-800 mb-6 text-center">お問い合わせフォーム</h2>
             
             <form id="inquiryForm" class="space-y-6 max-w-2xl mx-auto">
+                <!-- UPDATED: Added hidden field to identify this landing page -->
+                <input type="hidden" name="landingPageID" value="JOBFAIR Inquiry">
+                
                 <div>
                     <label for="inquiryType" class="block text-lg font-medium text-gray-700">お問い合わせ種別<span class="text-red-500">*</span></label>
                     <select id="inquiryType" name="inquiryType" required class="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-lg py-3 px-3">
